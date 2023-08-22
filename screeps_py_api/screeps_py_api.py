@@ -29,8 +29,9 @@ class APIClient:
     def game(self):
         return self._getdata('game/room-overview', shard='shard3')
     
-    def spawn(self, spawn, body):
-        command = f'Game.spawns["{spawn}"].spawnCreep({body["body"]}, "{body["creepName"]}");'
+    def spawn(self, spawn, creep):
+        # command = f"Game.spawns['{spawn}'].spawnCreep({', '.join((body[part]).__repr__() for part in body)});"
+        command = f"Game.spawns['{spawn}'].spawnCreep{str(creep)[5:].replace('None', '{}')};"
         print(command)
         return self.console(expression=command, shard='shard3')
     

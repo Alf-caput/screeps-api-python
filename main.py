@@ -1,20 +1,16 @@
 import screeps_py_api as screeps_api
 import json
-import requests
+from collections import namedtuple
+from random import randint
+
+Creep = namedtuple('Creep', field_names=('body', 'name', 'opts'), defaults=(None, None, None))
 
 # Your code goes here
 def main(api):
-    # print(json.dumps(api.me()))
-    # print(json.dumps(api.console(expression='I made my own api!!!', shard='shard3'), indent=4))
-    # type(api.game())
-    # print('Here')
-    # print((x:=json.dumps(api.game())), type(x))
-    # print(json.dumps(api.game(), indent=4))
-    body = {'creepName': 'Worker1',
-            'body': '[MOVE]'}
     spawn = 'Spawn1'
-    api.spawn(spawn, body)
-    # print(json.dumps(api.console(expression='I made my own api!!!', shard='shard3'), indent=4))
+    for _ in range(1, 4):
+        new_worker = Creep(['move'], f'worker{randint(1000, 9999)}')
+        print(api.spawn(spawn, new_worker))
     return
 
 if __name__ == '__main__':
