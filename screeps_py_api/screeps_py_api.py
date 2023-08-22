@@ -11,12 +11,12 @@ class APIClient:
         self.session.headers = {'X-Token': self.token, 'X-Username': self.token}
     
     def _getdata(self, endpoint, **params):
-        response = self.session.get(self.base_url+endpoint, params=params)
+        response = self.session.get(f'{self.base_url}/{endpoint}', params=params)
         response.raise_for_status()
         return response.json()
     
     def _postdata(self, endpoint, **data):
-        response = self.session.post(self.base_url+endpoint, json=data)
+        response = self.session.post(f'{self.base_url}/{endpoint}', json=data)
         response.raise_for_status()
         return response.json()
         
@@ -31,15 +31,18 @@ class APIClient:
     
     def spawn(self, spawn, creep):
         # command = f"Game.spawns['{spawn}'].spawnCreep({', '.join((body[part]).__repr__() for part in body)});"
-        command = f"Game.spawns['{spawn}'].spawnCreep{str(creep)[5:].replace('None', '{}')};"
+        command = f"Game.spawns['{spawn}'].spawnCreep{str(creep)[5:]};"
         print(command)
         return self.console(expression=command, shard='shard3')
+    
+    def read_console(self, shard='shard3'):
+        return self._getdata('user/console', shard=shard)
     
     def close(self):
         return self.session.close()
 
 @contextmanager
-def api_client_context(token, base_url='https://screeps.com/api/'):
+def api_client_context(token, base_url='https://screeps.com/api'):
     print(f'connecting to {base_url}...')
     client = APIClient(token, base_url)
     try:
