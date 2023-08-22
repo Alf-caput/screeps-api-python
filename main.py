@@ -21,7 +21,7 @@ def main(api):
     spawn = 'Spawn1'
     for _ in range(1):
         new_worker = Creep(['move'], f'worker{randint(1000, 9999)}', {'dryRun': _true})
-        print(api.spawn(spawn, new_worker))
+        print(json.dumps(api.spawn(spawn, new_worker), indent=4))
     # print(api.read_console)
     return
 
