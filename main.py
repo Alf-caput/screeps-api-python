@@ -18,11 +18,11 @@ Creep = namedtuple('Creep', field_names=('body', 'name', 'opts'), defaults=(_nul
 
 # Your code goes here
 def main(api):
-    spawn = 'Spawn1'
-    for _ in range(1):
-        new_worker = Creep(['move'], f'worker{randint(1000, 9999)}', {'dryRun': _true})
-        print(json.dumps(api.spawn(spawn, new_worker), indent=4))
-    # print(api.read_console)
+    # spawn = 'Spawn1'
+    # for _ in range(1):
+    #     new_worker = Creep(['move'], f'worker{randint(1000, 9999)}', {'dryRun': _true})
+    #     print(json.dumps(api.spawn(spawn, new_worker), indent=4))
+    print(api._getdata('version', dict_format=False))
     return
 
 if __name__ == '__main__':

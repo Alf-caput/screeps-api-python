@@ -10,15 +10,15 @@ class APIClient:
         self.session = requests.Session()
         self.session.headers = {'X-Token': self.token, 'X-Username': self.token}
     
-    def _getdata(self, endpoint, **params):
+    def _getdata(self, endpoint, dict_format=True, **params):
         response = self.session.get(f'{self.base_url}/{endpoint}', params=params)
         response.raise_for_status()
-        return response.json()
+        return response.json() if dict_format else json.dumps(response.json())
     
-    def _postdata(self, endpoint, **data):
+    def _postdata(self, endpoint, dict_format=True, **data):
         response = self.session.post(f'{self.base_url}/{endpoint}', json=data)
         response.raise_for_status()
-        return response.json()
+        return response.json() if dict_format else json.dumps(response.json())
         
     def me(self):
         return self._getdata('auth/me')
@@ -34,9 +34,6 @@ class APIClient:
         command = f"Game.spawns['{spawn}'].spawnCreep{str(creep)[5:]};"
         print(command)
         return self.console(expression=command, shard='shard3')
-    
-    def read_console(self, shard='shard3'):
-        return self._getdata('user/console', shard=shard)
     
     def close(self):
         return self.session.close()
