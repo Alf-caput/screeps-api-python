@@ -1,0 +1,8 @@
+# Enviroment
+env/
+
+# Ignore file containing user's token
+config.json
+
+# Compiled source
+**__pycache__/
