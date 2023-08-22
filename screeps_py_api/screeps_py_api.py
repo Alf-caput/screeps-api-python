@@ -23,12 +23,17 @@ class APIClient:
     def me(self):
         return self._getdata('auth/me')
 
-    def console(self, expression='', shard='shard0'):
-        return self._postdata('user/console', expression=f'console.log("{expression}")', shard=shard)
+    def console(self, expression='', shard='shard3'):
+        return self._postdata('user/console', expression=expression, shard=shard)
     
     def game(self):
         return self._getdata('game/room-overview', shard='shard3')
-        
+    
+    def spawn(self, spawn, body):
+        command = f'Game.spawns[{spawn}].spawnCreep({body["body"]}, {body["creepName"]});'
+        print(command)
+        return self.console(expression=command, shard='shard3')
+    
     def close(self):
         return self.session.close()
 

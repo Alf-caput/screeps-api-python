@@ -1,5 +1,6 @@
 import screeps_py_api as screeps_api
 import json
+import requests
 
 # Your code goes here
 def main(api):
@@ -8,7 +9,12 @@ def main(api):
     # type(api.game())
     # print('Here')
     # print((x:=json.dumps(api.game())), type(x))
-    print(json.dumps(api.game(), indent=4))
+    # print(json.dumps(api.game(), indent=4))
+    body = {"creepName": "'Worker2'",
+            "body": "[MOVE]"}
+    spawn = "'Spawn1'"
+    api.spawn(spawn, body)
+    # print(json.dumps(api.console(expression='I made my own api!!!', shard='shard3'), indent=4))
     return
 
 if __name__ == '__main__':
