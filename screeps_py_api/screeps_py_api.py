@@ -30,7 +30,7 @@ class APIClient:
         return self._getdata('game/room-overview', shard='shard3')
     
     def spawn(self, spawn, body):
-        command = f'Game.spawns[{spawn}].spawnCreep({body["body"]}, {body["creepName"]});'
+        command = f'Game.spawns["{spawn}"].spawnCreep({body["body"]}, "{body["creepName"]}");'
         print(command)
         return self.console(expression=command, shard='shard3')
     

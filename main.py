@@ -10,9 +10,9 @@ def main(api):
     # print('Here')
     # print((x:=json.dumps(api.game())), type(x))
     # print(json.dumps(api.game(), indent=4))
-    body = {"creepName": "'Worker2'",
-            "body": "[MOVE]"}
-    spawn = "'Spawn1'"
+    body = {'creepName': 'Worker1',
+            'body': '[MOVE]'}
+    spawn = 'Spawn1'
     api.spawn(spawn, body)
     # print(json.dumps(api.console(expression='I made my own api!!!', shard='shard3'), indent=4))
     return
