@@ -2,6 +2,7 @@ import base64
 import gzip
 import json
 
+
 def gz_to_dict(data_with_gz_prefix):
     # Remove prefix "gz:" retain value in base64
     value_base64 = data_with_gz_prefix[3:]

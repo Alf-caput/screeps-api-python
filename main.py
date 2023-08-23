@@ -5,7 +5,9 @@ from random import randint
 
 # Your code goes here
 def main(api):
-    print(json.dumps(api.console(expression='console.log("hi")').json(), indent=4))
+    response = api.console(expression='console.log("hi")').json()
+    print(type(response))
+    print(json.dumps(response, indent=4))
     # print(api.room_overview().json())
     return
 

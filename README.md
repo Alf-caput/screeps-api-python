@@ -1,6 +1,6 @@
-# Alf's unofficial screeps api in python
+# Python Unofficial screeps api
 ## Introduction
-This project's purpose is to create tools that allow python users to play the videogame screeps, using the game's api. It doesn't rely on transpiling python code to javascript, but on doing requests to https://screeps.com/api
+This project's purpose is to create tools for the API of the videogame screeps. It is entirely written in python and relies on doing requests to https://screeps.com/api.
 ## Setup
 Installation steps:
 1. Install the required modules in your enviroment using pip: ***pip install -r requirements.txt***
@@ -8,5 +8,5 @@ Installation steps:
 2. Create a file ***config.json*** containing your token surrounded by quotes, see ***example-config.json***
 3. You are good to go!
 ## Notes
-The project is in its first steps, although I'd love to allow people to participate, I'm still getting the handle on python and git. Please be patience, I'm not an experienced programmer but I'll try my best.
+The project is in its first steps, feel free to contact me.
 __Happy coding!__
