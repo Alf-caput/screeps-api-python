@@ -29,25 +29,26 @@ class APIClient:
                               expression=expression,
                               shard=shard)
     
-    def add_object_intent(self, _id='', room='', name='', intent='', shard=''):
-        return self._postdata(endpoint=f'game/add-object-intent',
+    def add_object_intent(self, _id='room', room='E17S26', name='destroyStructure', intent=[{'id': '5beef69780a5196874bb6987'},], shard='shard3'):
+        return self._postdata(endpoint='game/add-object-intent',
                               _id=_id,
                               room=room,
                               name=name,
                               intent=intent,
                               shard=shard)   
 
-    def room_objects(self, room='', shard=''):
+    def room_objects(self, room='E17S26', shard='shard3'):
         return self._getdata(endpoint=f'game/room-objects?room={room}',
-                             shard='shard3')
+                             shard=shard)
 
-    def spawn_creep(self, room='', shard=''):
-        return self._postdata(endpoint=f'game/spawn-creep',
-                             shard='shard3')
-    
-    def room_overview(self):  
+    def room_overview(self, shard='shard3'):  
         return self._getdata(endpoint='game/room-overview',
-                             shard='shard3')
+                             shard=shard)
+
+    def spawn_creep(self, spawn_name='Spawn1', creep_body=["move"], creep_name='worker', opts='{}', shard='shard3'):
+        spawn_str = f'Game.spawns[{spawn_name.__repr__()}].spawnCreep({creep_body},{creep_name.__repr__()}, {opts})'
+        print(spawn_str)
+        return self.console(expression=spawn_str, shard=shard)
 
     # def spawn(self, spawn, creep):
     #     # command = f"Game.spawns['{spawn}'].spawnCreep({', '.join((body[part]).__repr__() for part in body)});"

@@ -25,10 +25,7 @@ response['objects'][5] = {
 ----------------------------------------
 ENDPOINTS
 ----------------------------------------
+<Response [200]> game/room-terrain
+<Response [200]> user/rooms
 <Response [200]> game/room-status
-<Response [200]> game/create-object-intent
 <Response [200]> user/memory
-<Response [200]> user/sandbox-console
-<Response [200]> user/messages
-<Response [200]> user/notification-settings
-<Response [200]> user/market-orders
