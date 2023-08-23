@@ -50,11 +50,8 @@ class APIClient:
         print(spawn_str)
         return self.console(expression=spawn_str, shard=shard)
 
-    # def spawn(self, spawn, creep):
-    #     # command = f"Game.spawns['{spawn}'].spawnCreep({', '.join((body[part]).__repr__() for part in body)});"
-    #     command = f"Game.spawns['{spawn}'].spawnCreep{str(creep)[5:]};"
-    #     print(command)
-    #     return self.console(expression=command, shard='shard3')
+    def find_dict_in_listdicts(self, key, value, data):
+        return next(filter(lambda d: d[key]==value, data))
     
     def close(self):
         return self.session.close()
