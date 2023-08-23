@@ -45,15 +45,13 @@ def main(api):
     #                                 intent=intent,
     #                                 shard=shard).json()
 
-    structure_id = '5beefaa9b100ae2e78d91f4c'
+    structure_id = '5beefa9c2c6a4b6885951412'
     room_name = 'E17S26'
-    user_id = 'Alf_'  # maybe??
     shard = 'shard3'
     response = api.add_object_intent(_id="room",
-                                    room='E17S26',
+                                    room=room_name,
                                     name='destroyStructure',
                                     intent=[{'id': structure_id,
-                                             'roomName': room_name,
                                              },],
                                     shard=shard).json()
 
