@@ -1,0 +1,23 @@
+----------------------------------------
+SPAWN
+----------------------------------------
+response['objects'][5] = {
+    "_id": "64e5c7e6489cac4d15a95621",
+    "type": "spawn",
+    "room": "E17S26",
+    "x": 23,
+    "y": 10,
+    "name": "Spawn1",
+    "user": "616eb422b91958102d8b28b9",
+    "store": {
+        "energy": 300
+    },
+    "storeCapacityResource": {
+        "energy": 300
+    },
+    "hits": 5000,
+    "hitsMax": 5000,
+    "spawning": null,
+    "notifyWhenAttacked": true,
+    "off": false
+}

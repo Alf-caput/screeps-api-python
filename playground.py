@@ -1,4 +1,7 @@
+###########################################
 # Destroy structure
+###########################################
+# Replace this code's shard, structure_id and room_name variables with yours
 # _id = 'room'
 # room_name = 'E17S26'
 # action = 'destroyStructure'
@@ -10,4 +13,14 @@
 #                                 intent=intent,
 #                                 name=action,
 #                                 shard=shard).json()
+# print(json.dumps(response, indent=4))
+
+###########################################
+# Send console command
+###########################################
+# Replace this code's expression and shard variables with yours
+# shard = 'shard3'
+# expression = 'console.log("Hello world!")'
+# response = api.console(expression=expression, 
+#                        shard=shard).json()
 # print(json.dumps(response, indent=4))
