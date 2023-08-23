@@ -6,11 +6,19 @@ import constants
 
 # Your code goes here
 def main(api):
-    room_name = 'E17S26'
-    shard = 'shard3'
-    response = api.room_objects(room=room_name, 
-                           shard=shard).json()
-    print(json.dumps(response, indent=4))
+    endpoints = [
+        'game/room-status',
+        'game/create-object-intent',
+        'user/memory',
+        'user/sandbox-console',
+        'user/messages',
+        'user/notification-settings',
+        'user/market-orders'
+    ]
+    for ep in endpoints:
+        response = api._getdata(endpoint=f'game/room-overview')
+        print(response, ep)
+    # print(json.dumps(response, indent=4))
     return
 
 if __name__ == '__main__':

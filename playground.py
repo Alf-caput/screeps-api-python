@@ -24,3 +24,11 @@
 # response = api.console(expression=expression, 
 #                        shard=shard).json()
 # print(json.dumps(response, indent=4))
+
+###########################################
+# Retrieve objects in the room
+###########################################
+# room_name = 'E17S26'
+# shard = 'shard3'
+# response = api.room_objects(room=room_name, shard=shard).json()
+# print(json.dumps(response, indent=4))

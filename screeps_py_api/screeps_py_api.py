@@ -41,6 +41,10 @@ class APIClient:
         return self._getdata(endpoint=f'game/room-objects?room={room}',
                              shard='shard3')
 
+    def spawn_creep(self, room='', shard=''):
+        return self._postdata(endpoint=f'game/spawn-creep',
+                             shard='shard3')
+    
     def room_overview(self):  
         return self._getdata(endpoint='game/room-overview',
                              shard='shard3')
