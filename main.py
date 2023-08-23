@@ -6,66 +6,18 @@ import constants
 
 # Your code goes here
 def main(api):
-    # structure_id = '5beefa90c817d76880ba3d2a'
-    # room_name = 'E17S26'
-    # user_id = 'Alf_'  # maybe??
-    # shard = 'shard3'
-    # # response = api.room_overview().json()
-    # response = api.add_object_intent(_id="room",
-    #                                 room='E17S26',
-    #                                 name='destroyStructure',
-    #                                 intent=[{'id': structure_id,
-    #                                          'roomName': room_name,
-    #                                          'user': user_id},],
-    #                                 shard=shard).json()
-    
-    # structure_id = '64e5c7e6489cac4d15a95621'
-    # room_name = 'E17S26'
-    # user_id = 'Alf_'
-    # shard = 'shard3'
-    # creep_id = ''
-    # intent2 = [
-    #     {'id': structure_id,
-    #      'roomName': room_name,
-    #      'user': user_id,
-    #      'body': ['move'],
-    #      'name': 'Alf'}
-    # ]
-    # intent = [
-    #     {'id': structure_id,
-    #      'roomName': room_name,
-    #      'user': user_id,
-    #      'body': ['move'],
-    #      'name': 'Alf'}
-    # ]
-    # # response = api.room_overview().json()
-    # response = api.add_object_intent(_id=structure_id,
-    #                                 room='E17S26',
-    #                                 name='StructureSpawn',
-    #                                 intent=intent,
-    #                                 shard=shard).json()
-
-    structure_id = '5beef6af57e410647929e1e7'
+    _id = 'room'
     room_name = 'E17S26'
+    name = 'destroyStructure'
     shard = 'shard3'
-    response = api.add_object_intent(_id='room',
+    structure_id = '5beef6af57e410647929e1e7'
+    intent = [{'id': structure_id}]
+    response = api.add_object_intent(_id=_id,
                                     room=room_name,
-                                    name='destroyStructure',
-                                    intent=[{'id': structure_id}],
+                                    intent=intent,
+                                    name=name,
                                     shard=shard).json()
-
-    # key1 = 'x'
-    # key2 = 'y'
-    # value1 = 0
-    # value2 = 0
-    # _id_spawn1 = "64e5c7e6489cac4d15a95621"
-    # for d in response['terrain']:
-    #     print(f'{d[key1] = }, {d[key2] = }')
-    #     if d[key1] == value1 and d[key2] == value2:
-    #         searched_dict = d.copy()
-    # print(searched_dict)
     print(json.dumps(response, indent=4))
-    # print(api.room_overview().json())
     return
 
 if __name__ == '__main__':
