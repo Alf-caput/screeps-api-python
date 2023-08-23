@@ -1,9 +1,13 @@
 # Destroy structure
-# structure_id = '5beef6af57e410647929e1e7'
+# _id = 'room'
 # room_name = 'E17S26'
+# action = 'destroyStructure'
 # shard = 'shard3'
-# response = api.add_object_intent(_id='room',
+# structure_id = '5beef69780a5196874bb6987'
+# intent = [{'id': structure_id}]
+# response = api.add_object_intent(_id=_id,
 #                                 room=room_name,
-#                                 name='destroyStructure',
-#                                 intent=[{'id': structure_id}],
+#                                 intent=intent,
+#                                 name=action,
 #                                 shard=shard).json()
+# print(json.dumps(response, indent=4))
