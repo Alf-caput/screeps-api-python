@@ -12,7 +12,7 @@ class JsKeyword:
     def __str__(self) -> str:
         return str(self.value)
 
-_true = utils.JsKeyword('true')
-_null = utils.JsKeyword('{}')
+_true = JsKeyword('true')
+_null = JsKeyword('{}')
 
 Creep = namedtuple('Creep', field_names=('body', 'name', 'opts'), defaults=(_null, _null, _null))
