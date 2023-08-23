@@ -6,18 +6,57 @@ import constants
 
 # Your code goes here
 def main(api):
-    structure_id = '5beef6b7bbaffe2cbd8c5cbf'
+    # structure_id = '5beefa90c817d76880ba3d2a'
+    # room_name = 'E17S26'
+    # user_id = 'Alf_'  # maybe??
+    # shard = 'shard3'
+    # # response = api.room_overview().json()
+    # response = api.add_object_intent(_id="room",
+    #                                 room='E17S26',
+    #                                 name='destroyStructure',
+    #                                 intent=[{'id': structure_id,
+    #                                          'roomName': room_name,
+    #                                          'user': user_id},],
+    #                                 shard=shard).json()
+    
+    # structure_id = '64e5c7e6489cac4d15a95621'
+    # room_name = 'E17S26'
+    # user_id = 'Alf_'
+    # shard = 'shard3'
+    # creep_id = ''
+    # intent2 = [
+    #     {'id': structure_id,
+    #      'roomName': room_name,
+    #      'user': user_id,
+    #      'body': ['move'],
+    #      'name': 'Alf'}
+    # ]
+    # intent = [
+    #     {'id': structure_id,
+    #      'roomName': room_name,
+    #      'user': user_id,
+    #      'body': ['move'],
+    #      'name': 'Alf'}
+    # ]
+    # # response = api.room_overview().json()
+    # response = api.add_object_intent(_id=structure_id,
+    #                                 room='E17S26',
+    #                                 name='StructureSpawn',
+    #                                 intent=intent,
+    #                                 shard=shard).json()
+
+    structure_id = '5beefaa9b100ae2e78d91f4c'
     room_name = 'E17S26'
     user_id = 'Alf_'  # maybe??
     shard = 'shard3'
-    # response = api.room_overview().json()
     response = api.add_object_intent(_id="room",
                                     room='E17S26',
                                     name='destroyStructure',
                                     intent=[{'id': structure_id,
                                              'roomName': room_name,
-                                             'user': user_id},],
+                                             },],
                                     shard=shard).json()
+
     # key1 = 'x'
     # key2 = 'y'
     # value1 = 0
