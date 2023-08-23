@@ -3,26 +3,10 @@ import json
 from collections import namedtuple
 from random import randint
 
-class JsKeyword:
-    def __init__(self, value):
-        self.value = value
-    
-    def __repr__(self):
-        return self.value
-    
-_true = JsKeyword('true')
-_null = JsKeyword('{}')
-
-
-Creep = namedtuple('Creep', field_names=('body', 'name', 'opts'), defaults=(_null, _null, _null))
-
 # Your code goes here
 def main(api):
-    # spawn = 'Spawn1'
-    # for _ in range(1):
-    #     new_worker = Creep(['move'], f'worker{randint(1000, 9999)}', {'dryRun': _true})
-    #     print(json.dumps(api.spawn(spawn, new_worker), indent=4))
-    print(api._getdata('version', dict_format=False))
+    print(json.dumps(api.console(expression='console.log("hi")').json(), indent=4))
+    # print(api.room_overview().json())
     return
 
 if __name__ == '__main__':

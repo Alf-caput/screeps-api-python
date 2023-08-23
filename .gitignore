@@ -1,5 +1,6 @@
 # Enviroment
 env/
+.env/
 
 # Ignore file containing user's token
 config.json
