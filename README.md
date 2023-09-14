@@ -6,7 +6,6 @@ Installation steps:
 1. Install the required modules in your enviroment using pip: ***pip install -r requirements.txt***
 (It is highly recommended that you install the dependencies in a virtual enviroment instead of your global python)
 2. Create a file ***config.json*** containing your token surrounded by quotes, see ***example-config.json***
-3. You are good to go!
+3. You are good to go! Run and modify main.py to interact with the screeps api.
 ## Notes
-The project is in its first steps, feel free to contact me.
-__Happy coding!__
+Project in its first steps, implementation with asyncio pending...
